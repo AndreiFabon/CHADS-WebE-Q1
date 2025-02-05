@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.start {
+    
+    text-align: center;
+    color: white;
+
+}
+
+.start ul{
+    
+    text-align: center;
+    color: white;
+    list-style: none;
+}
+
+.button-class {
+    background-color: gray;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}

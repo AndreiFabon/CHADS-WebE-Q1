@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marble Game - Timer</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: url('static/images/marble1.webp') no-repeat center center/cover; /* Change to your image */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #timer-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="timer-box">Time Left: <span id="countdown">10:00</span></div>
+
+    <script>
+        function startCountdown(duration) {
+            const now = Date.now();
+            let endTime = localStorage.getItem("endTime");
+
+            if (!endTime) {
+                endTime = now + duration * 1000; // Set the 10-minute timer
+                localStorage.setItem("endTime", endTime);
+            }
+
+            function updateTimer() {
+                let remaining = Math.floor((endTime - Date.now()) / 1000);
+                if (remaining <= 0) {
+                    document.getElementById('countdown').textContent = "Time's up!";
+                    localStorage.removeItem("endTime");
+                    window.location.href = "game-over.html"; // Redirect on timeout
+                    return;
+                }
+
+                let minutes = Math.floor(remaining / 60);
+                let seconds = remaining % 60;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                document.getElementById('countdown').textContent = `${minutes}:${seconds}`;
+
+                requestAnimationFrame(updateTimer);
+            }
+
+            updateTimer();
+        }
+
+        window.onload = function () {
+            startCountdown(600); // 600 seconds (10 minutes)
+        };
+    </script>
+
+</body>
+</html>
