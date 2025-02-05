@@ -62,7 +62,7 @@
                 let minutes = Math.floor(remaining / 60);
                 let seconds = remaining % 60;
                 seconds = seconds < 10 ? '0' + seconds : seconds;
-                console.log(atob(screen));
+                console.log(atob(screen));// next path: /marble3.html
                 document.getElementById('countdown').textContent = `${minutes}:${seconds}`;
 
                 requestAnimationFrame(updateTimer); // Why don't you dig a little deeper

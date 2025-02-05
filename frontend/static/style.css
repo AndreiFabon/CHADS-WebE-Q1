@@ -47,8 +47,14 @@ body {
 /* Look deeper into #winner-box */
 
 #winner-box{
-    content: "Next path: /final-flag.html"; /* Hidden next path */
+    content: "Last path: /final-flag.html"; /* Hidden next path */
     display: block; /* Ensures it's rendered */
     color: transparent; /* Makes text invisible */
     font-size: 0px; /* Hides it visually */
+}
+
+.wrong{
+    text-align: center;
+    color: white;
+    font-size: 50px;
 }

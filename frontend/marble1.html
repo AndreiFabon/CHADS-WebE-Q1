@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: url('static/images/marble4.webp') no-repeat center center/cover; /* Change to your image */
+            background: url('static/images/marble4.webp') no-repeat center center/cover;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -35,7 +35,7 @@
 
 <body>
 
-    <div id="timer-box">Time Left: <span id="countdown">10:00</span></div>
+    <div id="timer-box">Time Left: <span id="countdown">30:00</span></div>
 
     <script>
         function startCountdown(duration) {
@@ -43,7 +43,7 @@
             let endTime = localStorage.getItem("endTime");
 
             if (!endTime) {
-                endTime = now + duration * 1000; // Set the 10-minute timer
+                endTime = now + duration * 1000; // Set the 30-minute timer
                 localStorage.setItem("endTime", endTime);
             }
 
@@ -68,11 +68,11 @@
         }
 
         window.onload = function () {
-            startCountdown(600); // 600 seconds (10 minutes)
+            startCountdown(1800); // 1800 seconds (30 minutes)
         };
     </script>
 
-<!-- The next flag is the same line but one thing changed  -->
+<!-- The next flag is the same line but one thing changed -->
 
 </body>
 </html>
