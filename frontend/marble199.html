@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marble Game - Timer</title>
+    <title>Marble Game - The Final Hint</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
     <style>
         body {
@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: url('static/images/marble4.webp') no-repeat center center/cover; /* Change to your image */
+            background: url('static/images/s-l1200.jpg') no-repeat center center/cover;
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -28,31 +28,54 @@
             top: 20px;
             right: 20px;
         }
+        #winner-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 2rem;
+            position: relative;
+        }
+        /* 🔥 Hide the text inside the same winner box */
+        .hidden-text {
+            color: transparent; /* Invisible by default */
+            font-size: 0px; /* Make it unreadable */
+        }
     </style>
 </head>
 
-<!-- How many marbles are in this picture? -->
-
 <body>
 
+    <!-- Global Timer (This stays constant across pages) -->
     <div id="timer-box">Time Left: <span id="countdown">10:00</span></div>
 
+    <!-- Only ONE #winner-box (Fixes the extra small box issue) -->
+    <div id="winner-box">
+        You're almost there... but sometimes, style is more than just looks
+        <span id="hidden-path" class="hidden-text"></span> <!-- Hidden text inside the same box -->
+    </div>
+
     <script>
-        function startCountdown(duration) {
-            const now = Date.now();
+        // 🔥 JavaScript inserts the hidden path dynamically (not in HTML source)
+        window.onload = function () {
+            document.getElementById("hidden-path").textContent = " Next path: /final-flag.html";
+        };
+        
+        // 🔥 Keeps the timer consistent across all pages
+        function updateTimer() {
             let endTime = localStorage.getItem("endTime");
 
             if (!endTime) {
-                endTime = now + duration * 1000; // Set the 10-minute timer
+                let now = Date.now();
+                endTime = now + 600 * 1000; // 10 minutes in milliseconds
                 localStorage.setItem("endTime", endTime);
             }
 
-            function updateTimer() {
+            function refreshTimer() {
                 let remaining = Math.floor((endTime - Date.now()) / 1000);
                 if (remaining <= 0) {
                     document.getElementById('countdown').textContent = "Time's up!";
                     localStorage.removeItem("endTime");
-                    window.location.href = "game-over.html"; // Redirect on timeout
+                    window.location.href = "game-over.html";
                     return;
                 }
 
@@ -61,18 +84,14 @@
                 seconds = seconds < 10 ? '0' + seconds : seconds;
                 document.getElementById('countdown').textContent = `${minutes}:${seconds}`;
 
-                requestAnimationFrame(updateTimer);
+                requestAnimationFrame(refreshTimer);
             }
 
-            updateTimer();
+            refreshTimer();
         }
 
-        window.onload = function () {
-            startCountdown(600); // 600 seconds (10 minutes)
-        };
+        updateTimer();
     </script>
-
-<!-- The next flag is the same line but one thing changed  -->
 
 </body>
 </html>

@@ -7,6 +7,14 @@ body {
     margin: 0;
 }
 
+.end {
+    
+    text-align: center;
+    color: red;
+    font-size: 100px;
+
+}
+
 .start {
     
     text-align: center;
@@ -33,4 +41,14 @@ body {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+/* You have come far, but the journey isn’t over yet... */
+/* Look deeper into #winner-box */
+
+#winner-box{
+    content: "Next path: /final-flag.html"; /* Hidden next path */
+    display: block; /* Ensures it's rendered */
+    color: transparent; /* Makes text invisible */
+    font-size: 0px; /* Hides it visually */
 }

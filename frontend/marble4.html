@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marble Game - Timer</title>
+    <title>Marble Game - Next Hint</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
     <style>
         body {
@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background: url('static/images/marble4.webp') no-repeat center center/cover; /* Change to your image */
+            background: url('static/images/marble1.webp') no-repeat center center/cover; /* Update background */
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -31,21 +31,24 @@
     </style>
 </head>
 
-<!-- How many marbles are in this picture? -->
-
 <body>
 
     <div id="timer-box">Time Left: <span id="countdown">10:00</span></div>
 
     <script>
         function startCountdown(duration) {
+            let screen = "VGhlIG5leHQgcGF0aCBpcyAvbWFyYmxlMTk5Lmh0bWw=";
             const now = Date.now();
             let endTime = localStorage.getItem("endTime");
 
             if (!endTime) {
-                endTime = now + duration * 1000; // Set the 10-minute timer
+                endTime = now + duration * 1000; // Keep the 10-minute timer persistent
                 localStorage.setItem("endTime", endTime);
             }
+
+            
+            
+
 
             function updateTimer() {
                 let remaining = Math.floor((endTime - Date.now()) / 1000);
@@ -59,20 +62,19 @@
                 let minutes = Math.floor(remaining / 60);
                 let seconds = remaining % 60;
                 seconds = seconds < 10 ? '0' + seconds : seconds;
+                console.log(atob(screen));
                 document.getElementById('countdown').textContent = `${minutes}:${seconds}`;
 
-                requestAnimationFrame(updateTimer);
+                requestAnimationFrame(updateTimer); // Why don't you dig a little deeper
             }
 
             updateTimer();
         }
 
         window.onload = function () {
-            startCountdown(600); // 600 seconds (10 minutes)
+            startCountdown(600); // Ensure timer continues running across pages
         };
     </script>
-
-<!-- The next flag is the same line but one thing changed  -->
 
 </body>
 </html>
