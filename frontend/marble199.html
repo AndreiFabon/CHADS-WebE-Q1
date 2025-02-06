@@ -35,10 +35,9 @@
             font-size: 2rem;
             position: relative;
         }
-        /* 🔥 Hide the text inside the same winner box */
-        .hidden-text {
-            color: transparent; /* Invisible by default */
-            font-size: 0px; /* Make it unreadable */
+        .foo {
+            color: transparent;
+            font-size: 0px;
         }
     </style>
 </head>
@@ -48,10 +47,9 @@
     <!-- Global Timer (This stays constant across pages) -->
     <div id="timer-box">Time Left: <span id="countdown">10:00</span></div>
 
-    <!-- Only ONE #winner-box (Fixes the extra small box issue) -->
-    <div id="winner-box">
+    <div id="winner-box"> <!-- You can’t even trust your best friend in this game. in these games, your only friend is yourself… Look within -->
         You're almost there... but sometimes, style is more than just looks
-        <span id="hidden-path" class="hidden-text"></span> <!-- Hidden text inside the same box -->
+        <span id="hidden-path" class="hidden-text"></span> 
     </div>
 
     <!--Next Path: /marble5.html -->
