@@ -16,7 +16,7 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 
 - Open **Source Code** Solve the hint and how does the hint connect with the aother question, one whole riddle
 
---
+---
 
 ### **Step 2: Inspect the Source Code for Hints**
 **Hint:** _"Why would you log a bunch of random letters in a really weird order?"_
