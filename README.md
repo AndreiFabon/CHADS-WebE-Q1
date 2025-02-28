@@ -11,7 +11,14 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 
 ## Steps to Solve
 
-### **Step 1: Inspect the Source Code for Hints**
+### **Step 1: Solve the Riddle**
+**Hint:** _"Look for one line, and there is one thing you change? and what do marbles have to do with anything?"_
+
+- Open **Source Code** Solve the hint and how does the hint connect with the aother question, one whole riddle
+
+--
+
+### **Step 2: Inspect the Source Code for Hints**
 **Hint:** _"Why would you log a bunch of random letters in a really weird order?"_
 
 - Open **Developer Tools** (`Right Click > Inspect` or `Ctrl + Shift + I` in Chrome).  
@@ -22,7 +29,7 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 
 ---
 
-### **Step 2: Analyze Console Logs to Decode the Message**
+### **Step 3: Analyze Console Logs to Decode the Message**
 **Hint:** _"Inspect > Console – Logs hold secrets."_
 
 - Switch to the **Console** tab in Developer Tools.  
@@ -35,7 +42,7 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 
 ---
 
-### **Step 3: Inspect the Stylesheet for the Final Path**
+### **Step 4: Inspect the Stylesheet for the Final Path**
 **Hint:** _"Inspect > Styles – Hidden components reveal the way."_
 
 - Navigate to **Sources > style.css** in Developer Tools.  
@@ -49,9 +56,10 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 ---
 
 ## Challenge Summary
-✅ **Step 1:** Inspect **source code** (`Elements` tab) for hints.  
-✅ **Step 2:** Decode the **console log** (`Console` tab).  
-✅ **Step 3:** Analyze **style.css** (`Sources` tab) to find the **final path**.  
+✅ **Step 1:** Solve a Silly little riddle
+✅ **Step 2:** Inspect **source code** (`Elements` tab) for hints.  
+✅ **Step 3:** Decode the **console log** (`Console` tab).  
+✅ **Step 4:** Analyze **style.css** (`Sources` tab) to find the **final path**.  
 
 ---
 
