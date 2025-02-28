@@ -66,7 +66,7 @@ Welcome to **CHADS-WebE-Q1**, a beginner-friendly web security challenge. Your o
 ## Rules
 - ❌ **No brute force or automated scanners.**
 - ✅ **Use only DevTools and manual analysis.**
-- 🎯 The **flag format is:** `CHADS{your_flag_here}`  
+- 🎯 The **flag format is:** `CHADS{RipAliAbdul}`  
 
 ---
 
